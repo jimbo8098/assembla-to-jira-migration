@@ -797,7 +797,7 @@ end
 
 def jira_get_user(username, groups)
   result = nil
-  url = "#{JIRA_API_HOST}/user?username=#{username}"
+  url = "#{JIRA_API_HOST}/user?accountId=#{username}"
   url += '&expand=groups' if groups
   begin
     response = RestClient::Request.execute(method: :get, url: url, headers: JIRA_HEADERS_ADMIN)
